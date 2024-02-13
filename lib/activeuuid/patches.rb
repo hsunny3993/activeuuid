@@ -33,9 +33,9 @@ module ActiveUUID
           simplified_type_without_uuid(field_type)
         end
 
-        alias_method_chain :type_cast, :uuid
-        alias_method_chain :type_cast_code, :uuid if ActiveRecord::VERSION::MAJOR < 4
-        alias_method_chain :simplified_type, :uuid
+        alias_method :type_cast, :uuid
+        alias_method :type_cast_code, :uuid if ActiveRecord::VERSION::MAJOR < 4
+        alias_method :simplified_type, :uuid
       end
     end
 
@@ -47,14 +47,14 @@ module ActiveUUID
           return UUIDTools::UUID.serialize(value) if type == :uuid
           type_cast_without_uuid(value)
         end
-        alias_method_chain :type_cast, :uuid if ActiveRecord::VERSION::MAJOR >= 4
+        alias_method :type_cast, :uuid if ActiveRecord::VERSION::MAJOR >= 4
 
         def simplified_type_with_pguuid(field_type)
           return :uuid if field_type == 'uuid'
           simplified_type_without_pguuid(field_type)
         end
 
-        alias_method_chain :simplified_type, :pguuid
+        alias_method :simplified_type, :pguuid
       end
     end
 
@@ -76,9 +76,9 @@ module ActiveUUID
           @native_database_types ||= native_database_types_without_uuid.merge(uuid: { name: 'binary', limit: 16 })
         end
 
-        alias_method_chain :quote, :visiting
-        alias_method_chain :type_cast, :visiting
-        alias_method_chain :native_database_types, :uuid
+        alias_method :quote, :visiting
+        alias_method :type_cast, :visiting
+        alias_method :native_database_types, :uuid
       end
     end
 
@@ -102,9 +102,9 @@ module ActiveUUID
           @native_database_types ||= native_database_types_without_pguuid.merge(uuid: { name: 'uuid' })
         end
 
-        alias_method_chain :quote, :visiting
-        alias_method_chain :type_cast, :visiting
-        alias_method_chain :native_database_types, :pguuid
+        alias_method :quote, :visiting
+        alias_method :type_cast, :visiting
+        alias_method :native_database_types, :pguuid
       end
     end
 
