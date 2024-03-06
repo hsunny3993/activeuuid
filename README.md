@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/jashmenn/activeuuid.png)](http://travis-ci.org/jashmenn/activeuuid)
 
+# Important!
+This gem only supports MySQL adapter in Rails 7
+
 # activeuuid
 
 Add `binary(16)` UUIDs to ActiveRecord.

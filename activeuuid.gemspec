@@ -5,9 +5,9 @@ require "activeuuid/version"
 Gem::Specification.new do |s|
   s.name        = "activeuuid"
   s.version     = Activeuuid::VERSION
-  s.authors     = ["Nate Murray"]
-  s.email       = ["nate@natemurray.com"]
-  s.homepage    = "https://github.com/jashmenn/activeuuid"
+  s.authors     = ["Ivan Antic"]
+  s.email       = ["ivanantic2000work@gmail.com"]
+  s.homepage    = "https://github.com/hsunny3993/activeuuid"
   s.summary     = %q{Add binary UUIDs to ActiveRecord in MySQL}
   s.description = %q{Add binary (not string) UUIDs to ActiveRecord in MySQL}
 
